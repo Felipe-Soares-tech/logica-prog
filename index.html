@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Página</title>
 </head>
+
 <body>
-<h1>lista de exemplos e exercicios</h1>
-    <Ul>
+    <h1>Lista de Exemplos e Exercícios</h1>
+    <ul>
         <script>
-            const arquivo = ['arquivo 01', 'arquivo 02']
-            for (let i = 0; i < arquivo.length; i++){
-                document.write(arquivo[0])
+            const arquivos = ['livrojs/cap1/exe1_1.html',
+                'livrojs/cap1/exe1_2.html',
+                'livrojs/cap1/exe1_3.html',
+                'livrojs/cap1/exe1_4.html',
+                'livrojs/cap2/exe2_1.html',
+                'livrojs/cap2/exe2_2.html',
+                'livrojs/cap2/exe2_3.html',
+                'livrojs/cap2/exe2_4.html',
+                'livrojs/cap4/ex4_A.html',
+                'livrojs/cap4/ex4_B.html',
+                'livrojs/cap4/ex4_C.html',
+                'livrojs/cap4/ex4_D.html',
+                'livrojs/cap4/exe4_1.html',
+                'livrojs/cap4/exe4_2.html',
+                'livrojs/cap4/exe4_3.html',
+                'livrojs/cap4/exe4_4.html',
+                'livrojs/cap4/exe4_5.html',
+                'livrojs/cap4/exe4_6.html',
+                'livrojs/cap4/ex4_A.html',
+                'livrojs/cap4/ex4_B.html',
+                'livrojs/cap4/ex4_C.html',
+                'livrojs/cap4/ex4_D.html',]
+            let cap = ""
+            for (let i = 0; i < arquivos.length; i++) {
+
+                let url = arquivos[i].split('/')
+                if (cap != url[1]) {
+                    cap = url[1]
+                    document.write(`<h3>${cap.replace('cap', 'Capitulo')}<h3>`)
+                }
+
+                let link = arquivos[i].substring(13).replace('.html', '').replace('exe', 'exemplo').replace('_', '.')
+                document.write(`<li><a href="${arquivos[i]}">${link}</a></li>`)
             }
         </script>
-        <li><a href = 'livrojs/cap01/cap2/exe1_1.html'>exemplo 1.1</a> </li>
-        <li><a href = 'https://youtu.be/lMGT8D9AB_I?si=tjCGNLR4U6qo-jZy'>pinto</a></li>
-    </Ul>
 
+    </ul>
 </body>
+
 </html>
